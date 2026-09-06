@@ -4,4 +4,4 @@ __pycache__/
 *.tfstate
 *.tfstate.backup
 .terraform/
-venv/
+kubernetes/trust-policy.json
