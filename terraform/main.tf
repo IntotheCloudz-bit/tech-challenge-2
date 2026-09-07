@@ -144,4 +144,3 @@ resource "aws_security_group" "eks_cluster" {
     Name = "tech2-eks-cluster-sg"
   }
 }
-

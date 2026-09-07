@@ -32,9 +32,14 @@ resource "aws_eks_cluster" "tech2" {
   role_arn = aws_iam_role.eks_cluster.arn
   version  = "1.34"
 
-  lifecycle {
-  ignore_changes = [tags]
+access_config {
+  authentication_mode                         = "API_AND_CONFIG_MAP"
+  bootstrap_cluster_creator_admin_permissions = true
 }
+
+  lifecycle {
+    ignore_changes = [tags]
+  }
 
   vpc_config {
     subnet_ids = [

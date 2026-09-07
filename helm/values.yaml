@@ -1,0 +1,22 @@
+replicaCount: 1
+
+image:
+  repository: 701559402152.dkr.ecr.us-east-1.amazonaws.com/tech2-app
+  tag: latest
+  pullPolicy: Always
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 5000
+
+resources:
+  requests:
+    cpu: "100m"
+    memory: "128Mi"
+
+autoscaling:
+  minReplicas: 1
+  maxReplicas: 12
+  cpuUtilization: 50
+  memoryUtilization: 50
