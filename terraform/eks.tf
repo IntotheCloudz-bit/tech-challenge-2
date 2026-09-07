@@ -32,6 +32,10 @@ resource "aws_eks_cluster" "tech2" {
   role_arn = aws_iam_role.eks_cluster.arn
   version  = "1.34"
 
+  lifecycle {
+  ignore_changes = [tags]
+}
+
   vpc_config {
     subnet_ids = [
       aws_subnet.tech2-public.id,

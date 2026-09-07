@@ -37,6 +37,17 @@ resource "aws_subnet" "tech2-private-2" {
   }
 }
 
+resource "aws_subnet" "tech2-public-2" {
+  vpc_id                  = aws_vpc.tech2-vpc.id
+  cidr_block              = "10.0.3.0/24"
+  availability_zone       = "us-east-1b"
+  map_public_ip_on_launch = true
+
+  tags = {
+    Name = "tech2-public-subnet-2"
+  }
+}
+
 resource "aws_internet_gateway" "Tech2-IGW" {
   vpc_id = aws_vpc.tech2-vpc.id
 
@@ -61,6 +72,11 @@ resource "aws_route_table" "tech2-public" {
 
 resource "aws_route_table_association" "public" {
   subnet_id      = aws_subnet.tech2-public.id
+  route_table_id = aws_route_table.tech2-public.id
+}
+
+resource "aws_route_table_association" "public-2" {
+  subnet_id      = aws_subnet.tech2-public-2.id
   route_table_id = aws_route_table.tech2-public.id
 }
 
