@@ -21,5 +21,14 @@ pipeline {
                 '''
             }
         }
+
+        stage('Deploy to EKS') {
+            steps {
+                sh '''
+                    aws eks update-kubeconfig --region us-east-1 --name tech2-eks-cluster
+                    helm upgrade --install tech2-app ./helm
+                '''
+            }
+        }
     }
 }
