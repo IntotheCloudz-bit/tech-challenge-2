@@ -1,9 +1,3 @@
-Yes. The README should be more like a **real deployment runbook**: someone should be able to clone the repo and understand exactly how you built, deployed, verified, and troubleshot it.
-
-Also, since this is your **interview portfolio**, the commands are valuable because they demonstrate what you actually did.
-
-Replace the README content with this expanded version:
-
 ````markdown
 # Tech Challenge 2 — AWS Cloud / DevOps CI/CD Project
 
