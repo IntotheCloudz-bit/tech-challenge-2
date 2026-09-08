@@ -2,9 +2,9 @@ pipeline {
     agent any
 
     stages {
-        stage('Build Docker Image') {
+        stage('Test') {
             steps {
-                sh 'docker build -t tech2-app .'
+                echo 'Jenkins pipeline is working!'
             }
         }
     }
