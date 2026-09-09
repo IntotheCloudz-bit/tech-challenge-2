@@ -1525,3 +1525,4 @@ Hello, World!
 and is publicly accessible through the AWS Application Load Balancer.
 
 ---
+# GitOps pipeline test
