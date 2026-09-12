@@ -1515,6 +1515,8 @@ AWS Application Load Balancer
    ↓
 Flask Application
 ```
+App URL:
+http://k8s-default-tech2app-e0908ec3e7-310219193.us-east-1.elb.amazonaws.com
 
 The deployed application returns:
 
